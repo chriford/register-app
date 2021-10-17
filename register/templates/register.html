@@ -1,47 +1,56 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>register</title>
-    <style>
-        form {
-            margin: 1em; color: white;
-        }
-        .form-image {
-            margin-top: 0px;
-            background-image: url(../static/rocks01.jpg) 
-        }
-        .transparent-input {
-            color: white;
-            font-size: 26px;
-            background-color: rgba(0, 0, 0, .6);
-         }
-         .transparent-input:focus {
-             background-color: rgba(0, 0, 0, .8);
-             color: lime;
-             border-color: black;
-         }
-         .transparent-input-select:focus {
-            color: white;
-         }
-         .btn {
-             border-color: lightsalmon;
-         }
-         .default-select:hover {
-             color: white;
-         }
-    </style>
-{% endblock %} 
+<title>register</title>
+<style>
+    form {
+        margin: 1em;
+        color: white;
+    }
+
+    .form-image {
+        margin-top: 0px;
+        background-image: url(../static/rocks01.jpg)
+    }
+
+    .transparent-input {
+        color: white;
+        font-size: 26px;
+        background-color: rgba(0, 0, 0, .6);
+    }
+
+    .transparent-input:focus {
+        background-color: rgba(0, 0, 0, .8);
+        color: lime;
+        border-color: black;
+    }
+
+    .transparent-input-select:focus {
+        color: white;
+    }
+
+    .btn {
+        border-color: lightsalmon;
+    }
+
+    .default-select:hover {
+        color: white;
+    }
+</style>
+{% endblock %}
 {% block body %}
 <div class="form-image">
-    
+
     <form method="POST">
         {% csrf_token %}
         <h1 style="color: white;">Register*</h1>
         <div class="form-floating mb-3">
-            <input required maxlength="30" type="text" class="form-control transparent-input" id="floatingInput" placeholder="name surname">
+            <input required maxlength="30" type="text" class="form-control transparent-input" id="floatingInput"
+                placeholder="name surname">
             <label for="floatingInput">Your full name</label>
         </div>
         <div class="form-floating mb-3">
-            <input maxlength="18" type="number" class="form-control transparent-input" id="floatingInput" placeholder="123456789">
+            <input maxlength="18" type="number" class="form-control transparent-input" id="floatingInput"
+                placeholder="123456789">
             <label required for="floatingInput">Your exam number</label>
         </div>
 

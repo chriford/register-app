@@ -1,11 +1,40 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>Signup</title>
-    <style>
-        
-    </style>
-{% endblock %} 
+<title>Signup</title>
+<style>
+
+</style>
+{% endblock %}
 {% block body %} <br>
-    <h1>Signup</h1>
-    
+<form method="post"> {% csrf_token %}<br>
+    <div class="container card card-body">
+        <h1 class="h1">Signup*</h1>
+        <div class="row">
+            <div class="form-floating mb-3">
+                <input name="email" type="email" class="form-control transparent-input" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+        </div>
+
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control transparent-input" id="floatingPassword"
+                placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="form-check mt-4">
+            <input name="is_done" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                keep me in
+            </label>
+            <div class="forgot-p">
+                <a class="forgot-p" href="">?Forgot password</a>
+            </div>
+            <h6>Don't have an account? <a id="signup-01" href="{% url 'signup' %}">Signup</a></h6>
+        </div>
+        <button type="submit" class="btn btn-success mt-4 mb-2">Login</button>
+    </div>
+</form>
+
 {% endblock %}
