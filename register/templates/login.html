@@ -5,14 +5,19 @@
       .container {
         background-image: url(../static/lock01.jpg);
         color: white;
+        border-radius: 1em;
       }
       .transparent-input, .transparent-input:focus {
         background-color: rgba(0, 0, 0, .5);
         color: lime;
         font-size: 26px;
       }
-      .h1 {
-        align-content: center;
+      .transparent-input:hover {
+        color: limegreen;
+      }
+      .btn-success {
+        border-top-left-radius: 2em;
+        border-bottom-right-radius: 2em;
       }
     </style>
 {% endblock %} 
@@ -28,7 +33,7 @@
       <input name="password" type="password" class="form-control transparent-input" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
-    <button type="submit" class="btn btn-outline-primary mt-3 mb-4">Login</button>
+    <button type="submit" class="btn btn-success mt-3 mb-4">Login</button>
   </div>
 </form>
 {% endblock %}
