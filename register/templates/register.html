@@ -6,23 +6,27 @@
             margin: 1em; color: white;
         }
         .form-image {
-            margin-top: -17px;
-            background-image: url(../static/image01.jpg)
+            margin-top: 0px;
+            background-image: url(../static/rocks01.jpg) 
         }
         .transparent-input {
             color: white;
-            background-color: transparent;
+            font-size: 26px;
+            background-color: rgba(0, 0, 0, .6);
          }
          .transparent-input:focus {
-             background-color: transparent;
+             background-color: rgba(0, 0, 0, .8);
              color: lime;
              border-color: black;
          }
          .transparent-input-select:focus {
-            color: black;
+            color: white;
          }
          .btn {
              border-color: lightsalmon;
+         }
+         .default-select:hover {
+             color: white;
          }
     </style>
 {% endblock %} 
@@ -42,7 +46,7 @@
         </div>
 
         <select name="province" class="form-select transparent-input transparent-input-select mb-2" aria-label="">
-            <option selected>Select your province</option>
+            <option class="default-select" selected>Select your province</option>
             <option value="1">Lusaka</option>
             <option value="2">Copperbelt</option>
             <option value="3">Central</option>

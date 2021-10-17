@@ -5,9 +5,12 @@ from .serializer import RegisterSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Register
-from django.contrib.auth.forms import UserCreationForm
 
-# --------------------- Api Views --------------
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
+
+# --------------------- Api Views DOCKER --------------
 
 
 @api_view(['GET', 'POST'])
@@ -58,3 +61,11 @@ def update_or_delete_view(request):
 
 def admin_view(request):
     return render(request, 'admin.html')
+
+
+def signup_view(request):
+    return render(request, 'signup.html')
+
+
+def login_view(request):
+    return render(request, 'login.html')
