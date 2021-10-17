@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>register</title>
+    <style>
+        form {
+            margin: 1em; color: white;
+        }
+        .form-image {
+            margin-top: -17px;
+            background-image: url(../static/image01.jpg)
+        }
+        .transparent-input {
+            color: white;
+            background-color: transparent;
+         }
+         .transparent-input:focus {
+             background-color: transparent;
+             color: lime;
+             border-color: black;
+         }
+         .transparent-input-select:focus {
+            color: black;
+         }
+         .btn {
+             border-color: lightsalmon;
+         }
+    </style>
+{% endblock %} 
+{% block body %}
+<div class="form-image">
+    
+    <form method="POST">
+        {% csrf_token %}
+        <h1 style="color: white;">Register*</h1>
+        <div class="form-floating mb-3">
+            <input required maxlength="30" type="text" class="form-control transparent-input" id="floatingInput" placeholder="name surname">
+            <label for="floatingInput">Your full name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input maxlength="18" type="number" class="form-control transparent-input" id="floatingInput" placeholder="123456789">
+            <label required for="floatingInput">Your exam number</label>
+        </div>
+
+        <select name="province" class="form-select transparent-input transparent-input-select mb-2" aria-label="">
+            <option selected>Select your province</option>
+            <option value="1">Lusaka</option>
+            <option value="2">Copperbelt</option>
+            <option value="3">Central</option>
+            <option value="4">Western</option>
+            <option value="5">Northern</option>
+            <option value="6">North-Western</option>
+            <option value="7">Southern</option>
+            <option value="8">Eastern</option>
+            <option value="9">Muchinga</option>
+            <option value="10">Luapula</option>
+        </select>
+
+        <div class="form-check mb-3">
+            <input name="is_done" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Done
+            </label>
+        </div>
+        <input type="submit" class="btn btn-primary" value="register" />
+
+        <span class="placeholder-glow">
+            <hr class="placeholder col-12" />
+        </span>
+
+    </form>
+</div>
+{% endblock %}
