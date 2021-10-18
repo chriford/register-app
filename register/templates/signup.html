@@ -2,38 +2,72 @@
 {% block head %}
 <title>Signup</title>
 <style>
+    .login-01 {
+        color: lightskyblue;
+    }
 
+    form {
+        background-color: rgb(45, 51, 45);
+        padding-bottom: 8em;
+        padding-top: 4em;
+        margin-top: -1em;
+    }
+
+    .h1 {
+        text-shadow: 2px 2px 5px lightblue;
+    }
+
+    .transparent-input,
+    .transparent-input:focus {
+        background-color: rgba(0, 0, 0, .5);
+        color: dodgerblue;
+        font-size: 26px;
+    }
+
+    .transparent-input:hover {
+        color: dodgerblue;
+    }
+
+    .container {
+        border-color: lightsalmon;
+        background-image: url(../static/lock01.jpg);
+        color: white;
+        border-radius: 1em;
+    }
 </style>
 {% endblock %}
 {% block body %} <br>
 <form method="post"> {% csrf_token %}<br>
     <div class="container card card-body">
         <h1 class="h1">Signup*</h1>
-        <div class="row">
-            <div class="form-floating mb-3">
-                <input name="email" type="email" class="form-control transparent-input" id="floatingInput"
-                    placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
+        <div class="form-floating mb-3">
+            <input name="full name" type="text" class="form-control transparent-input" id="floatingInput"
+                placeholder="name surname">
+            <label for="floatingInput">full name</label>
         </div>
 
-        <div class="form-floating">
+        <div class="form-floating mb-3">
+            <input name="email" type="email" class="form-control transparent-input" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating mb-3">
             <input name="password" type="password" class="form-control transparent-input" id="floatingPassword"
                 placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
 
-        <div class="form-check mt-4">
-            <input name="is_done" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                keep me in
-            </label>
-            <div class="forgot-p">
-                <a class="forgot-p" href="">?Forgot password</a>
-            </div>
-            <h6>Don't have an account? <a id="signup-01" href="{% url 'signup' %}">Signup</a></h6>
+        <div class="form-floating mb-3">
+            <input name="password" type="password" class="form-control transparent-input" id="floatingPassword"
+                placeholder="Confirm password">
+            <label for="floatingPassword">Confirm password</label>
         </div>
-        <button type="submit" class="btn btn-success mt-4 mb-2">Login</button>
+
+        <div class="form-check mt-4">
+            <h6>Already have an account? <a id="login-01" href="{% url 'login' %}">Login</a></h6>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4 mb-2">Signup</button>
     </div>
 </form>
 

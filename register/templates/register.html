@@ -3,8 +3,15 @@
 <title>register</title>
 <style>
     form {
+        padding-top: 4em;
         margin: 1em;
+        margin-top: -0.5em;
         color: white;
+        padding-bottom: 14em;
+    }
+
+    .h1 {
+        text-shadow: 2px 2px 5px blue;
     }
 
     .form-image {
@@ -30,6 +37,10 @@
 
     .btn {
         border-color: lightsalmon;
+        padding-left: 4em;
+        padding-right: 4em;
+        font-size: 18px;
+        text-shadow: 2px 2px 4px yellow;
     }
 
     .default-select:hover {
@@ -42,19 +53,20 @@
 
     <form method="POST">
         {% csrf_token %}
-        <h1 style="color: white;">Register*</h1>
+        <h1 class="h1">Register*</h1>
         <div class="form-floating mb-3">
-            <input required maxlength="30" type="text" class="form-control transparent-input" id="floatingInput"
-                placeholder="name surname">
+            <input required maxlength="30" name="fullname" type="text" class="form-control transparent-input"
+                id="floatingInput" placeholder="name surname">
             <label for="floatingInput">Your full name</label>
         </div>
         <div class="form-floating mb-3">
-            <input maxlength="18" type="number" class="form-control transparent-input" id="floatingInput"
+            <input maxlength="18" name="examnum" type="number" class="form-control transparent-input" id="floatingInput"
                 placeholder="123456789">
             <label required for="floatingInput">Your exam number</label>
         </div>
 
-        <select name="province" class="form-select transparent-input transparent-input-select mb-2" aria-label="">
+        <select name="province" name="province" class="form-select transparent-input transparent-input-select mb-2"
+            aria-label="">
             <option class="default-select" selected>Select your province</option>
             <option value="1">Lusaka</option>
             <option value="2">Copperbelt</option>
