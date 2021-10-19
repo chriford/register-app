@@ -15,5 +15,4 @@ urlpatterns = [
     path('user/admin/page/', admin_view, name="admin"),
     path('signup/', signup_view, name="signup"),
     path('login/', login_view, name="login")
-
 ]
